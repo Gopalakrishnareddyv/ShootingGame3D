@@ -17,20 +17,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(Vector3.forward * Speed*Time.deltaTime);
             animator.SetTrigger("Walk");
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             transform.Translate(Vector3.up * Speed * Time.deltaTime);
             animator.SetTrigger("Jump");
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            //transform.Translate(Vector3.up * Speed * Time.deltaTime);
-            animator.SetTrigger("Shoot");
         }
         else
         {
